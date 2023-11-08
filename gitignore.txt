@@ -1,0 +1,6 @@
+# Ignora os arquvios .bak
+modelagem/*.bak*
+/*.gitignore
+# Ignora os arquvios .vpp.bak
+modelagem/*.vpp.bak*
+/*.gitignore
