@@ -1,4 +1,4 @@
-DROP TABLE inscricoes cascade;
+DROP TABLE inscricao cascade;
 DROP TABLE pessoa cascade ;
 DROP TABLE palestrante cascade;
 DROP TABLE programacao cascade;
