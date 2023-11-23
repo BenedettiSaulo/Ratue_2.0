@@ -24,20 +24,20 @@ public class Pessoa {
 	@Id
 	@Column(name = "pes_cod")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_pessoa")
-	private Long pessoaCodigo;
+	private Long codigo;
 
 	@Column(name = "pes_cpf")
-	private String pessoaCpf;
+	private String cpf;
 
 	@Column(name = "pes_nome")
-	private String pessoaNome;
+	private String nome;
 
 	@Column(name = "pes_dt_nas")
-	private Date pessoaDataNascimento;
+	private Date dataNascimento;
 
 	@Column(name = "pes_fone")
-	private String pessoaFone;
+	private String fone;
 
 	@Column(name = "pes_sexo")
-	private Character pessoaSexo;
+	private Character sexo;
 }

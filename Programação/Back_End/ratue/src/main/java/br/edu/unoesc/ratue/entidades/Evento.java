@@ -30,32 +30,32 @@ public class Evento {
 	@Id
 	@Column(name = "eve_cod")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_evento")
-	private Long eventoCodigo;
+	private Long codigo;
 
 	@Column(name = "eve_nome")
-	private String eventoNome;
+	private String nome;
 
 	@Column(name = "eve_tema")
-	private String eventoTema;
+	private String tema;
 
 	@Column(name = "eve_data")
-	private Date eventoData;
+	private Date data;
 
 	@Column(name = "eve_hora")
-	private Timestamp eventoHora;
+	private Timestamp hora;
 
-	@Column(name = "eve_age_cod")
-	private String eventoAgenciaCodigo;
+	@Column(name = "age_cod")
+	private String agenciaCodigo;
 
 	@Column(name = "eve_resumo")
-	private String eventoResumo;
+	private String resumo;
 
 	@ManyToOne
 	@JoinColumn(name = "eve_age_cod", referencedColumnName = "age_cod")
 	private Agencia agencia;
 
 	@OneToMany(mappedBy = "evento", cascade = CascadeType.ALL)
-	private List<Inscricao> inscricoes;
+	private List<Inscricao> listaInscricoes;
 
 	@OneToMany(mappedBy = "evento", cascade = CascadeType.ALL)
 	private List<Programacao> listaProgramacoes;

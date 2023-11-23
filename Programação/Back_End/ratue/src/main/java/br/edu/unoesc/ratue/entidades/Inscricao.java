@@ -25,14 +25,18 @@ public class Inscricao {
 	@EmbeddedId
 	private InscricaoId id;
 
+	@ManyToOne
+	@JoinColumn(name = "eve_cod", referencedColumnName = "eve_cod", insertable = false, updatable = false)
+	private Evento evento;
+
 	@Column(name = "par_sts_pag")
-	private String participanteStatusPagamento;
+	private String statusPagamento;
 
 	@Column(name = "par_tipo_pag")
-	private String participanteTipoPagamento;
+	private String tipoPagamento;
 
 	@Column(name = "par_vlr_ing")
-	private Double participanteValorIngresso;
+	private Double valorIngresso;
 
 }
 
@@ -41,17 +45,11 @@ class InscricaoId implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@Column(name = "pes_cod")
-	private Long pessoaCodigo;
-
-	@Column(name = "eve_cod")
-	private Long eventoCodigo;
-
 	@ManyToOne
-	@JoinColumn(name = "pes_cod", referencedColumnName = "pes_cod")
+	@JoinColumn(name = "pes_cod", referencedColumnName = "pes_cod", insertable = false, updatable = false)
 	private Pessoa pessoa;
 
 	@ManyToOne
-	@JoinColumn(name = "eve_cod", referencedColumnName = "eve_cod")
+	@JoinColumn(name = "eve_cod", referencedColumnName = "eve_cod", insertable = false, updatable = false)
 	private Evento evento;
 }

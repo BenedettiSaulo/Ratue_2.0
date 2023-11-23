@@ -2,7 +2,9 @@ package br.edu.unoesc.ratue.aplicacao;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+@EntityScan(basePackages = "br.edu.unoesc.ratue.entidades")
 @SpringBootApplication
 public class RatueApplication {
 

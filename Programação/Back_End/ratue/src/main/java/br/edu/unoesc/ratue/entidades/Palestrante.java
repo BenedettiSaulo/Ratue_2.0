@@ -40,7 +40,7 @@ public class Palestrante {
 	@Column(name = "pal_fone")
 	private String palestranteFone;
 
-	@Column(name = "pro_cod_atv")
+	@Column(name = "pro_cod_atv", insertable = false, updatable = false)
 	private Long programacaoCodigoAtividade;
 
 	@ManyToOne

@@ -24,21 +24,21 @@ public class Agencia {
 	@Id
 	@Column(name = "age_cod")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_agencia")
-	private Long agenciaCodigo;
+	private Long codigo;
 
 	@Column(name = "age_nome")
-	private String agenciaNome;
+	private String nome;
 
 	@Column(name = "age_fone")
-	private String agenciaFone;
+	private String fone;
 
 	@Column(name = "age_ende")
-	private String agenciaEndereco;
+	private String endereco;
 
 	@Column(name = "age_cnpj")
-	private String agenciaCnpj;
+	private String cnpj;
 
 	@Column(name = "age_dt_cria")
-	private Date agenciaDataCriacao;
+	private Date dataCriacao;
 
 }

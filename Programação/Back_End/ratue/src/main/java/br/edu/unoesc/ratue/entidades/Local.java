@@ -28,12 +28,12 @@ public class Local {
 	@Id
 	@Column(name = "loc_cod")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_local")
-	private Long localCodigo;
+	private Long codigo;
 
 	@Column(name = "loc_nom")
-	private String localNome;
+	private String nome;
 
-	@Column(name = "cid_cod")
+	@Column(name = "cid_cod", insertable = false, updatable = false)
 	private Long cidadeCodigo;
 
 	@ManyToOne

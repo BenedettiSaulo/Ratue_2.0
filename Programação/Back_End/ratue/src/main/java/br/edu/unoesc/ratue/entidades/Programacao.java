@@ -26,13 +26,13 @@ public class Programacao {
 	@Id
 	@Column(name = "pro_cod_atv")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_programacao")
-	private Long programacaoCodigoAtividade;
+	private Long codigoAtividade;
 
 	@Column(name = "pro_tipo_atv")
-	private String programacaoTipoAtividade;
+	private String tipoAtividade;
 
 	@Column(name = "pro_dur")
-	private Timestamp programacaoDuracao;
+	private Timestamp duracao;
 
 	@ManyToOne
 	@JoinColumn(name = "eve_cod", referencedColumnName = "eve_cod", insertable = false, updatable = false)

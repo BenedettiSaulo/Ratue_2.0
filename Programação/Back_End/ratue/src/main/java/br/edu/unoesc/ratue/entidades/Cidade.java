@@ -22,14 +22,14 @@ public class Cidade {
 	@Id
 	@Column(name = "cid_cod")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_cidade")
-	private Long cidadeCodigo;
+	private Long codigo;
 
 	@Column(name = "cid_cep")
-	private String cidadeCep;
+	private String cep;
 
 	@Column(name = "cid_nome")
-	private String cidadeNome;
+	private String nome;
 
 	@Column(name = "cid_uf")
-	private String cidadeUf;
+	private String uf;
 }
