@@ -22,7 +22,7 @@ values (1,'01153-000', 'São Paulo', 'SP'),
 	(9, '90000-000', 'Porto Alegre', 'RS'),
 	(10, '10000-000', 'Rio de Janeiro', 'RJ');	
 
-insert into evento (eve_cod, eve_nome,eve_tema,eve_data,eve_hora,eve_age_cod,eve_resumo,eve_vlr)
+insert into evento (eve_cod, eve_nome,eve_tema,eve_data,eve_hora,age_cod,eve_resumo,eve_vlr)
 values (1, 'Festa na Árvore', 'CarFest', '10/07/2023', '20:00', 1, 'Festa da comunidade','6000.00'),
   (2, 'Conferência de Tecnologia', 'TechConf', '15/08/2023', '09:30', 2,  'Palestras sobre as últimas tendências tecnológicas','7000.00'),
   (3, 'Exposição de Arte', 'ArtExpo', '20/09/2023', '14:00', 3,'Mostra de obras de arte de artistas locais','4000.00'),
@@ -97,7 +97,7 @@ values (1, '106.700.449.25', 'Benedio Ratute', '25/11/1996', '049 991525344','M'
   	(59, '555.666.777-98', 'Patricia Cantos', '18/06/1996', '047 900099988','F'),
   	(60, '666.777.888-09', 'Renato Ferreira', '25/09/1998', '048 899988877','M');
 
-insert into inscricoes (pes_cod,eve_cod,par_sts_pag,par_tipo_pag,par_vlr_ing)
+insert into inscricao (pes_cod,eve_cod,par_sts_pag,par_tipo_pag,par_vlr_ing)
 values (1,1,'pago','cartao de credito','50.00'),
 	  (2, 1, 'pendente', 'boleto','50.00'),
 	  (3, 2, 'pago', 'cartao de credito','50.00'),
