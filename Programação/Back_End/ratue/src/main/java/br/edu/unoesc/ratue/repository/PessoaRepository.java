@@ -11,6 +11,6 @@ import br.edu.unoesc.ratue.entidades.Pessoa;
 @Repository
 public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
 
-	@Query(value = "select * from pessoa p where upper(trim(p.pes_nome)) like %?1%")
-	List<Pessoa> buscarPorNome(String name);
+	@Query(value = "select p from Pessoa p where upper(trim(p.nome)) like %?1%")
+	List<Pessoa> buscarPorNome(String nome);
 }

@@ -6,11 +6,11 @@ import br.edu.unoesc.ratue.entidades.Pessoa;
 
 public interface PessoaService {
 
-	public abstract Pessoa salvarPessoa(Pessoa pessoa);
+	public abstract String salvarPessoa(Pessoa pessoa);
 
 	public abstract void deletarPorCodigo(Long codigo);
 
-	public abstract Pessoa atualizarPessoa(Pessoa pessoa);
+	public abstract String atualizarPessoa(Pessoa pessoa);
 
 	public abstract List<Pessoa> buscarPorNome(String nome);
 

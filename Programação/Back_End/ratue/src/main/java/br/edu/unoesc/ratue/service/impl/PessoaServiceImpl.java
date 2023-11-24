@@ -1,5 +1,14 @@
 package br.edu.unoesc.ratue.service.impl;
 
+import static br.edu.unoesc.ratue.constant.StringConstant.MENSAGEM_ERRO_AO_ATUALIZAR_PESSOA;
+import static br.edu.unoesc.ratue.constant.StringConstant.MENSAGEM_ERRO_AO_BUSCAR_PESSOA_POR_NOME;
+import static br.edu.unoesc.ratue.constant.StringConstant.MENSAGEM_ERRO_AO_BUSCAR_TODAS_AS_PESSOAS;
+import static br.edu.unoesc.ratue.constant.StringConstant.MENSAGEM_ERRO_AO_SALVAR_PESSOA;
+import static br.edu.unoesc.ratue.constant.StringConstant.MENSAGEM_ERRO_CODIGO_DA_PESSOA_NAO_INFORMADO;
+import static br.edu.unoesc.ratue.constant.StringConstant.MENSAGEM_PESSOA_ATUALIZADA_COM_SUCESSO;
+import static br.edu.unoesc.ratue.constant.StringConstant.MENSAGEM_PESSOA_SALVA_COM_SUCESSO;
+
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +25,22 @@ public class PessoaServiceImpl implements PessoaService {
 	private PessoaRepository pessoaRepository;
 
 	@Override
-	public Pessoa salvarPessoa(Pessoa pessoa) {
+	public String salvarPessoa(Pessoa pessoa) {
 
-		return pessoaRepository.save(pessoa);
+		try {
+
+			pessoaRepository.save(pessoa);
+
+			System.out.println(MENSAGEM_PESSOA_SALVA_COM_SUCESSO);
+
+			return MENSAGEM_PESSOA_SALVA_COM_SUCESSO;
+
+		} catch (Exception e) {
+
+			System.out.println(MENSAGEM_ERRO_AO_SALVAR_PESSOA);
+
+			return MENSAGEM_ERRO_AO_SALVAR_PESSOA;
+		}
 	}
 
 	@Override
@@ -28,20 +50,63 @@ public class PessoaServiceImpl implements PessoaService {
 	}
 
 	@Override
-	public Pessoa atualizarPessoa(Pessoa pessoa) {
+	public String atualizarPessoa(Pessoa pessoa) {
 
-		return pessoaRepository.saveAndFlush(pessoa);
+		if (pessoa.getCodigo() == null) {
+
+			logarMensagem(MENSAGEM_ERRO_CODIGO_DA_PESSOA_NAO_INFORMADO);
+
+			return MENSAGEM_ERRO_CODIGO_DA_PESSOA_NAO_INFORMADO;
+		}
+
+		try {
+
+			pessoaRepository.saveAndFlush(pessoa);
+
+			logarMensagem(MENSAGEM_PESSOA_ATUALIZADA_COM_SUCESSO);
+
+			return MENSAGEM_PESSOA_ATUALIZADA_COM_SUCESSO;
+
+		} catch (Exception e) {
+
+			logarMensagem(MENSAGEM_ERRO_AO_ATUALIZAR_PESSOA);
+
+			return MENSAGEM_ERRO_AO_ATUALIZAR_PESSOA;
+		}
 	}
 
 	@Override
 	public List<Pessoa> buscarPorNome(String nome) {
 
-		return pessoaRepository.buscarPorNome(nome.trim().toUpperCase());
+		try {
+
+			return pessoaRepository.buscarPorNome(nome.trim().toUpperCase());
+
+		} catch (Exception e) {
+
+			logarMensagem(MENSAGEM_ERRO_AO_BUSCAR_PESSOA_POR_NOME);
+
+			return Arrays.asList(new Pessoa());
+		}
 	}
 
 	@Override
 	public List<Pessoa> buscarTodos() {
 
-		return pessoaRepository.findAll();
+		try {
+
+			return pessoaRepository.findAll();
+
+		} catch (Exception e) {
+
+			logarMensagem(MENSAGEM_ERRO_AO_BUSCAR_TODAS_AS_PESSOAS);
+
+			return Arrays.asList(new Pessoa());
+		}
+	}
+
+	private void logarMensagem(String mensagem) {
+
+		System.out.println(mensagem);
 	}
 }

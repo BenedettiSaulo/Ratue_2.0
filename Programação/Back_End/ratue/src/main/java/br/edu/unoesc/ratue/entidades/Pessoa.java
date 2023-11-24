@@ -8,22 +8,19 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.Data;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
+
+@Data
 @Entity
-@SequenceGenerator(name = "seq_pessoa", sequenceName = "seq_pessoa", allocationSize = 1, initialValue = 1)
+@SequenceGenerator(name = "pessoa_pes_cod_seq", sequenceName = "pessoa_pes_cod_seq", allocationSize = 1, initialValue = 1)
 public class Pessoa {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@Column(name = "pes_cod")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_pessoa")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pessoa_pes_cod_seq")
 	private Long codigo;
 
 	@Column(name = "pes_cpf")

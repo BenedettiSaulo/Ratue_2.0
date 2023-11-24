@@ -1,4 +1,4 @@
-package br.edu.unoesc.ratue.aplicacao;
+package br.edu.unoesc.ratue;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
