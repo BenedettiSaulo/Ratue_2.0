@@ -1,26 +1,27 @@
-insert into  agencia (age_cod, age_nome, age_fone, age_ende, age_cnpj , age_dt_cria )
-values (1,'Prime events', '3564-8000', 'Rua das acacias 6 centro', '22.430.370/0001-00','06/02/1998'),
-(2,'MiaKhalifaEvents', '3664-8000', 'Rua das Palmeiras 667 centro', '54.184.382/0001-80','07/02/1999'),
-(3,'Zenets combia', '3884-8580', 'Rua de Setembro 78 centro', '12.652.241/0001-02','28/05/1988'),
-(4,'Almeida', '3664-8080', 'Rua das figueiras 88 centro', '74.209.653/0001-11','25/05/1996'),
-(5,'Mania de vencer', '3644-8000', 'Rua das Cerejeiras 957 centro', '12.735.974/0001-00','15/09/1994'),
-(6,'Game Over', '3655-8550', 'Rua da Planice 557 centro', '88.574.058/0001-90','18/07/1989'),
-(7, 'PalmerOlive', '3210-1234', 'Avenida Principal 123', '11.222.333/0001-00', '01/01/2000'),
-(8, 'Grilo de Trilha', '9876-5432', 'Rua dos Sonhos 456', '44.555.666/0001-11', '02/02/2002'),
-(9, 'Padeiro Entreteriment', '5678-9012', 'Praça Central 789', '77.888.999/0001-22', '03/03/2004'),
-(10, 'Royal ERror', '2345-6789', 'Avenida do Progresso 987', '88.999.000/0001-33', '04/04/2006');
+insert into  agencia (age_nome, age_fone, age_ende, age_cnpj , age_dt_cria )
+values ('Prime events', '3564-8000', 'Rua das acacias 6 centro', '22.430.370/0001-00','06/02/1998'),
+('MiaKhalifaEvents', '3664-8000', 'Rua das Palmeiras 667 centro', '54.184.382/0001-80','07/02/1999'),
+('Zenets combia', '3884-8580', 'Rua de Setembro 78 centro', '12.652.241/0001-02','28/05/1988'),
+('Almeida', '3664-8080', 'Rua das figueiras 88 centro', '74.209.653/0001-11','25/05/1996'),
+('Mania de vencer', '3644-8000', 'Rua das Cerejeiras 957 centro', '12.735.974/0001-00','15/09/1994'),
+('Game Over', '3655-8550', 'Rua da Planice 557 centro', '88.574.058/0001-90','18/07/1989'),
+('PalmerOlive', '3210-1234', 'Avenida Principal 123', '11.222.333/0001-00', '01/01/2000'),
+('Grilo de Trilha', '9876-5432', 'Rua dos Sonhos 456', '44.555.666/0001-11', '02/02/2002'),
+('Padeiro Entreteriment', '5678-9012', 'Praça Central 789', '77.888.999/0001-22', '03/03/2004'),
+('Royal ERror', '2345-6789', 'Avenida do Progresso 987', '88.999.000/0001-33', '04/04/2006');
 
-insert into  cidade (cid_cod , cid_cep , cid_nome , cid_uf)
-values (1,'01153-000', 'São Paulo', 'SP'),
-	(2,'65047‑040', 'São Luís', 'MA'),
-	(3,'89900-000', 'São Miguel Do Oeste', 'SC'),
-	(4,'55590-000', 'Porto de Galinhas', 'PE'),
-	(5,'78780-000', 'Alto Araguaia', 'MT'),
-	(6,'7072-2500', 'Asa NorteBrasília', 'DF'),
-	(7, '70000-000', 'Brasília', 'DF'),
-	(8, '80000-000', 'Curitiba', 'PR'),
-	(9, '90000-000', 'Porto Alegre', 'RS'),
-	(10, '10000-000', 'Rio de Janeiro', 'RJ');	
+
+insert into  cidade (cid_cep , cid_nome , cid_uf)
+values ('01153-000', 'São Paulo', 'SP'),
+	('65047‑040', 'São Luís', 'MA'),
+	('89900-000', 'São Miguel Do Oeste', 'SC'),
+	('55590-000', 'Porto de Galinhas', 'PE'),
+	('78780-000', 'Alto Araguaia', 'MT'),
+	('7072-2500', 'Asa NorteBrasília', 'DF'),
+	('70000-000', 'Brasília', 'DF'),
+	('80000-000', 'Curitiba', 'PR'),
+	('90000-000', 'Porto Alegre', 'RS'),
+	('10000-000', 'Rio de Janeiro', 'RJ');	
 
 insert into evento (eve_cod, eve_nome,eve_tema,eve_data,eve_hora,age_cod,eve_resumo,eve_vlr)
 values (1, 'Festa na Árvore', 'CarFest', '10/07/2023', '20:00', 1, 'Festa da comunidade','6000.00'),
