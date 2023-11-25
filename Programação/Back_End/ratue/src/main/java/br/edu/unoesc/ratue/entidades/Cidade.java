@@ -10,9 +10,13 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
+/**
+ * @author Saulo Benedetti
+ * 
+ * Classe pública para a entidade Cidade
+ * 
+ * Representa a tabela cidade
+ */
 @Entity
 @SequenceGenerator(name = "seq_cidade", sequenceName = "seq_cidade", allocationSize = 1, initialValue = 1)
 public class Cidade {

@@ -18,9 +18,13 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
+/**
+ * @author Saulo Benedetti
+ * 
+ * Classe pública para a entidade Evento
+ * 
+ * Representa a tabela Evento
+ */
 @Entity
 @SequenceGenerator(name = "seq_evento", sequenceName = "seq_evento", allocationSize = 1, initialValue = 1)
 public class Evento {

@@ -12,9 +12,14 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
+
+/**
+ * @author Saulo Benedetti
+ * 
+ * Classe pública para a entidade Agencia
+ * 
+ * Representa a tabela agencia
+ */
 @Entity
 @SequenceGenerator(name = "seq_agencia", sequenceName = "seq_agencia", allocationSize = 1, initialValue = 1)
 public class Agencia {

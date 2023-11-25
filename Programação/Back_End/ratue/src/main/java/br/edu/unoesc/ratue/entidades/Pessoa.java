@@ -10,7 +10,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 import lombok.Data;
 
-
+/**
+ * @author Saulo Benedetti
+ * 
+ * Classe pública para a entidade Pessoa
+ * 
+ * Representa a tabela pessoa
+ */
 @Data
 @Entity
 @SequenceGenerator(name = "pessoa_pes_cod_seq", sequenceName = "pessoa_pes_cod_seq", allocationSize = 1, initialValue = 1)

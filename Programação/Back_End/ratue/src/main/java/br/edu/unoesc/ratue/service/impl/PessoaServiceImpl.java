@@ -18,12 +18,25 @@ import br.edu.unoesc.ratue.entidades.Pessoa;
 import br.edu.unoesc.ratue.repository.PessoaRepository;
 import br.edu.unoesc.ratue.service.PessoaService;
 
+/**
+ * Implementação da interface PessoaService para manipulação de entidades Pessoa.
+ * Esta classe fornece operações para salvar, atualizar, deletar e buscar pessoas.
+ * 
+ * @author Saulo Benedetti
+ */
+
 @Service
 public class PessoaServiceImpl implements PessoaService {
 
-	@Autowired
+	@Autowired // Injeção de dependencia do repositório da entidade Pessoa
 	private PessoaRepository pessoaRepository;
 
+	/**
+	 * Método público que serve para salvar uma pessoa
+	 * 
+	 * @param pessoa A entidade Pessoa a ser salva.
+	 * @return Uma mensagem indicando se a pessoa foi salva com sucesso.
+	 */
 	@Override
 	public String salvarPessoa(Pessoa pessoa) {
 
@@ -43,12 +56,23 @@ public class PessoaServiceImpl implements PessoaService {
 		}
 	}
 
+	/**
+	 * Método público que serve para deletar uma pessoa pelo seu código
+	 * 
+	 * @param codigo Recebe o código da pessoa do tipo Long
+	 */
 	@Override
 	public void deletarPorCodigo(Long codigo) {
 
 		pessoaRepository.deleteById(codigo);
 	}
 
+	/**
+	 * Método público que serve para atualizar uma pessoa
+	 * 
+	 * @param pessoa A entidade Pessoa a ser atualizada.
+	 * @return Uma mensagem indicando se a atualização foi bem-sucedida.
+	 */
 	@Override
 	public String atualizarPessoa(Pessoa pessoa) {
 
@@ -75,6 +99,12 @@ public class PessoaServiceImpl implements PessoaService {
 		}
 	}
 
+	/**
+	 * Método público que serve para buscar pessoas por nome
+	 * 
+	 * @param nome Recebe o nome da pessoa do tipo String
+	 * @return List<String> listaPessoas
+	 */
 	@Override
 	public List<Pessoa> buscarPorNome(String nome) {
 
@@ -90,6 +120,11 @@ public class PessoaServiceImpl implements PessoaService {
 		}
 	}
 
+	/**
+	 * Método público que serve para buscar todas as pessoas
+	 * 
+	 * @return Lista de pessoas
+	 */
 	@Override
 	public List<Pessoa> buscarTodos() {
 
@@ -105,6 +140,11 @@ public class PessoaServiceImpl implements PessoaService {
 		}
 	}
 
+	/**
+	 * Método privado que serve para logar as mensagens no console
+	 * 
+	 * @param mensagem Recebe a mensagem que vai ser logada do tipo String
+	 */
 	private void logarMensagem(String mensagem) {
 
 		System.out.println(mensagem);

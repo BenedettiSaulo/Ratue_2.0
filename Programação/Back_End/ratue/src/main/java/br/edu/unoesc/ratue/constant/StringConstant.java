@@ -1,5 +1,11 @@
 package br.edu.unoesc.ratue.constant;
 
+/**
+ * @author Saulo Benedetti
+ * 
+ * Classe abstrata que contém Strings constantes
+ * 
+ */
 public abstract class StringConstant {
 
 	public static final String PATH_SALVAR_PESSOA = "salvarpessoa";

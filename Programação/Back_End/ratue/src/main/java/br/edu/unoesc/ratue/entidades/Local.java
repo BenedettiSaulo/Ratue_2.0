@@ -16,9 +16,13 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
+/**
+ * @author Saulo Benedetti
+ * 
+ * Classe pública para a entidade Local
+ * 
+ * Representa a tabela local
+ */
 @Entity
 @SequenceGenerator(name = "seq_local", sequenceName = "seq_local", allocationSize = 1, initialValue = 1)
 public class Local {

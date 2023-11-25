@@ -23,10 +23,15 @@ import org.springframework.web.bind.annotation.RestController;
 import br.edu.unoesc.ratue.entidades.Pessoa;
 import br.edu.unoesc.ratue.service.PessoaService;
 
+/**
+ * @author Saulo Benedetti
+ * 
+ * Classe pública controladora para a entidade Pessoa
+ */
 @RestController
 public class PessoaController {
 
-	@Autowired
+	@Autowired // Injeção de dependencia da classe PessoaService
 	private PessoaService pessoaService;
 
 	@PostMapping(value = PATH_SALVAR_PESSOA)

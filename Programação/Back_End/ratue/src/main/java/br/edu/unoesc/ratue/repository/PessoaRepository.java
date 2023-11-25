@@ -8,6 +8,12 @@ import org.springframework.stereotype.Repository;
 
 import br.edu.unoesc.ratue.entidades.Pessoa;
 
+/**
+ * @author Saulo Benedetti
+ * 
+ * Classe pública repositória para a entidade Pessoa
+ * 
+ */
 @Repository
 public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
 
