@@ -64,13 +64,35 @@ $$ LANGUAGE plpgsql;
 --Vamos criar uma política para a tabela evento que permitirá apenas atualizações de eventos feitas por uma agência específica.
 
 
-ALTER TABLE evento ENABLE ROW LEVEL SECURITY;
+--Usuário com permissões de leitura e escrita:
+CREATE USER usuario_leitura_escrita WITH PASSWORD 'senha123';
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO usuario_leitura_escrita;
 
-CREATE POLICY update_evento_policy
-  FOR UPDATE
-  USING (age_cod = current_setting('dbver.current_agencia_id')::INT 
-  OR current_user = 'admin'); 
- select * from evento e 
+--Usuário com permissões apenas de leitura:
+CREATE USER usuario_apenas_leitura WITH PASSWORD 'senha456';
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO usuario_apenas_leitura;
+
+--Usuário administrador:
+CREATE USER usuario_admin WITH PASSWORD 'senhaAdmin';
+ALTER USER usuario_admin WITH SUPERUSER;
+
+--Usuário com permissões de execução de funções:
+CREATE USER usuario_funcao WITH PASSWORD 'senhaFuncao';
+GRANT EXECUTE ON ALL FUNCTIONS IN SCHEMA public TO usuario_funcao;
+
+--Grupo de Leitura:
+CREATE GROUP grupo_leitura;
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO grupo_leitura;
+GRANT USAGE ON ALL SEQUENCES IN SCHEMA public TO grupo_leitura;
+GRANT grupo_leitura TO usuario_leitura_escrita;
+GRANT grupo_leitura TO usuario_apenas_leitura;
+
+--Grupo de Administração:
+CREATE GROUP grupo_admin;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO grupo_admin;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO grupo_admin;
+GRANT grupo_admin TO usuario_admin;
+
   
  --4. Configuração de Backup e Restore:
 --Configurar Backup:
